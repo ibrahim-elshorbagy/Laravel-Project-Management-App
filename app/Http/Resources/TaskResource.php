@@ -28,7 +28,7 @@ class TaskResource extends JsonResource
             'status' => $this->status,
             'priority' => $this->priority,
             'image_path' => $this->image_path && !(str_starts_with($this->image_path, 'http')) ?
-                Storage::url($this->image_path) : '',
+                Storage::url($this->image_path) : $this->image_path,
             'project_id' => $this->project_id,
             'project' => new ProjectResource($this->project),
             'assigned_user_id' => $this->assigned_user_id,
