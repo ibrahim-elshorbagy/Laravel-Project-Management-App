@@ -236,12 +236,8 @@ export default function Index({ auth, projects, queryParams = null, success }) {
                                                 </th>
                                                 <td className="px-3 py-2 text-center">
                                                     <span
-                                                        style={{
-                                                            whiteSpace:
-                                                                "nowrap",
-                                                        }}
                                                         className={
-                                                            "px-2 py-1 text-white rounded " +
+                                                            "px-2 py-1 text-nowrap text-white rounded " +
                                                             PROJECT_STATUS_CLASS_MAP[
                                                                 project.status
                                                             ]
@@ -274,8 +270,13 @@ export default function Index({ auth, projects, queryParams = null, success }) {
                                                         Edit
                                                     </Link>
                                                     <button
-                                                        onClick={(e)=>deleteProject(project)}
-                                                        className="mx-1 font-medium text-red-600 dark:text-red-500 hover:underline">
+                                                        onClick={(e) =>
+                                                            deleteProject(
+                                                                project
+                                                            )
+                                                        }
+                                                        className="mx-1 font-medium text-red-600 dark:text-red-500 hover:underline"
+                                                    >
                                                         Delete
                                                     </button>
                                                 </td>
