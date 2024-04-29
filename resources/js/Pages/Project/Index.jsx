@@ -7,7 +7,7 @@ import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import {
     PROJECT_STATUS_TEXT_MAP,
     PROJECT_STATUS_CLASS_MAP,
-} from "@/constant.jsx";
+} from "@/constants.jsx";
 import { Head, Link, router } from "@inertiajs/react";
 
 
@@ -200,9 +200,11 @@ export default function Index({ auth, projects, queryParams = null }) {
                                                         style={{ width: 60 }}
                                                     />
                                                 </td>
-                                                <th className="px-3 py-2 text-gray-100 text-nowrap hover:underline">
-                                                    <div className="whitespace-normal">
-                                                        {project.name}
+                                                <th className="px-3 py-2 text-gray-100 cursor-pointer text-nowrap hover:underline">
+                                                    <div >
+                                                        <Link href={route('project.show',project.id)}>
+                                                            {project.name}
+                                                        </Link>
                                                     </div>
                                                 </th>
                                                 <td className="px-3 py-2 text-center">
